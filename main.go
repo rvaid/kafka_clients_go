@@ -167,6 +167,7 @@ func consumeMessages(consumer *kafka.Consumer, wg *sync.WaitGroup) {
 			// Processing logic
 			// Unmarshal JSON bytes to map[string]interface{}
 			err = json.Unmarshal(msg.Value, &data_out)
+			// Printing the unmarshalled data
 			fmt.Printf("\n%v\n", data_out)
 			if err != nil {
 				log.Fatalf(err.Error())
